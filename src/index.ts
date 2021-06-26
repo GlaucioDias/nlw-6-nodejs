@@ -2,10 +2,13 @@ import express, { Request, Response, NextFunction } from 'express';
 import "express-async-errors";
 import { router } from './routes';
 import './database'
+import cors from 'cors';
 
 const PORT = process.env.PORT || 3300
 
 const app = express();
+
+app.use(cors())
 
 app.use(express.json())
 
